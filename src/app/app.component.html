@@ -1,2 +1,11 @@
+<mat-sidenav-container class="al-sidenav-container">
+  <mat-sidenav class="al-sidenav" #sidenav [mode]="push" [opened]="false">
+    <!-- Sidenav content -->
+    <p>Sidenav</p>
+  </mat-sidenav>
+  <mat-sidenav-content class="al-sidenav-content">
+    <app-toolbar (menuClick)="sidenav.toggle()"></app-toolbar>
+    <app-contact-list></app-contact-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-<app-contact-list></app-contact-list>

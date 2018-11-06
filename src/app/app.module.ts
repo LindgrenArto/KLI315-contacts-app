@@ -6,16 +6,24 @@ import { ContactListComponent } from './contact/contact-list/contact-list.compon
 import {ContactListItemComponent} from './contact/contact-list-item/contact-list-item.component';
 import {ContactService} from './contact/services/contact.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarComponent } from './ui/toolbar/toolbar/toolbar.component';
+import {MatButtonModule, MatDialogModule, MatIconModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
-    ContactListItemComponent
+    ContactListItemComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [
     ContactService
