@@ -7,7 +7,18 @@ import {ContactListItemComponent} from './contact/contact-list-item/contact-list
 import {ContactService} from './contact/services/contact.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './ui/toolbar/toolbar/toolbar.component';
-import {MatButtonModule, MatDialogModule, MatIconModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from '@angular/material';
+import {AvatarModule} from 'ngx-avatar';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,7 +34,12 @@ import {MatButtonModule, MatDialogModule, MatIconModule, MatSidenavModule, MatTo
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDividerModule,
+    MatCardModule,
+    AvatarModule,
+    FlexLayoutModule,
+    NgxPaginationModule
   ],
   providers: [
     ContactService

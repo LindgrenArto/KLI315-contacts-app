@@ -1,4 +1,9 @@
 
-<ul><app-contact-list-item *ngFor="let contact of contacts" [contact]="contact" (contactSelect)="onContactSelect(contact)"></app-contact-list-item></ul>
-
-
+  <div  fxLayout='row' fxLayoutAlign="space-around center" fxLayoutGap="10px" fxLayout.md="column" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayout.xs="column" class="al-card-padding">
+    <app-contact-list-item *ngFor="let contact of contacts | paginate: { itemsPerPage: 4, currentPage: p}" [contact]="contact"
+                           (contactSelect)="onContactSelect(contact)"
+                           fxFlexAlign="center center"></app-contact-list-item>
+  </div>
+  <div>
+    <pagination-controls (pageChange)="p = $event" fxLayoutAlign="center"></pagination-controls>
+  </div>

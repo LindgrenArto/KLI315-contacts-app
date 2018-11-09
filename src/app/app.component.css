@@ -10,3 +10,15 @@
 .al-sidenav {
   width: 14%;
 }
+.al-sidenav-center {
+  text-align: center;
+}
+.al-icon-size {
+  font-size: 120px;
+  width: 120px;
+  height: 120px;
+}
+.al-span {
+  text-align: center;
+  font-size: 20px;
+}
