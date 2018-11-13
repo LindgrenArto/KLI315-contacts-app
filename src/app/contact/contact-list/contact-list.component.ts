@@ -24,4 +24,7 @@ export class ContactListComponent implements OnInit {
     console.log(contact.id);
   }
 
+  onContactCreate(): void {
+    console.log('created');
+  }
 }

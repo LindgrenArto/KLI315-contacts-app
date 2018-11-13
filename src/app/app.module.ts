@@ -11,8 +11,8 @@ import {
   MatButtonModule,
   MatCardModule,
   MatDialogModule,
-  MatDividerModule,
-  MatIconModule,
+  MatDividerModule, MatFormFieldModule,
+  MatIconModule, MatInputModule,
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
@@ -20,9 +20,11 @@ import {AvatarModule} from 'ngx-avatar';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {RouterModule, Routes} from '@angular/router';
+import { ContactDetailComponent } from './contact/contact-detail/contact-detail/contact-detail.component';
 
 const appRoutes: Routes = [
-  {path: 'contacts', component: ContactListComponent}
+  {path: 'contacts', component: ContactListComponent},
+  {path: 'contacts/new', component: ContactDetailComponent}
 ]
 
 @NgModule({
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     AppComponent,
     ContactListComponent,
     ContactListItemComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,8 @@ const appRoutes: Routes = [
     AvatarModule,
     FlexLayoutModule,
     NgxPaginationModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

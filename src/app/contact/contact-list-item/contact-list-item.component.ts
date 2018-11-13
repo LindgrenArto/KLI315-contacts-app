@@ -24,7 +24,7 @@ export class ContactListItemComponent implements OnInit {
   }
 
   deleteContact() {
-    this.contactService.deleteContacts(this.contact.id);
+    this.contactService.deleteContacts(this.contact);
   }
 
 }
