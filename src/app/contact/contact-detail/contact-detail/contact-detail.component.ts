@@ -14,4 +14,9 @@ export class ContactDetailComponent implements OnInit {
     this.router.navigate(['/contacts/new']);
   }
 
+
+  onSave(): void {
+    console.log('saved');
+    this.router.navigate(['/contacts']);
+  }
 }

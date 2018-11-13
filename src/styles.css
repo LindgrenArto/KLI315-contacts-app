@@ -6,6 +6,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .al-fab {
   position: absolute !important;
-  bottom: 76px;
+  bottom: 70px;
   right: 25px;
 }
