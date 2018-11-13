@@ -23,4 +23,5 @@ export class ContactListComponent implements OnInit {
   onContactSelect(contact: Contact) {
     console.log(contact.id);
   }
+
 }

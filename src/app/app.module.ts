@@ -19,6 +19,11 @@ import {
 import {AvatarModule} from 'ngx-avatar';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: 'contacts', component: ContactListComponent}
+]
 
 @NgModule({
   declarations: [
@@ -39,7 +44,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MatCardModule,
     AvatarModule,
     FlexLayoutModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     ContactService

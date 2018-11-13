@@ -14,8 +14,8 @@
     {{contact.city}}
   </mat-card-content>
   <mat-card-actions align="end">
-    <mat-icon>delete</mat-icon>
-    <mat-icon>edit</mat-icon>
+    <button mat-icon-button (click)="deleteContact()"><mat-icon>delete</mat-icon> </button>
+    <button mat-icon-button><mat-icon>edit</mat-icon></button>
   </mat-card-actions>
 </mat-card>
 

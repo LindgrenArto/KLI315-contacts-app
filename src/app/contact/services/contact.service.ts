@@ -33,5 +33,11 @@ export class ContactService {
     return this.contacts;
   }
 
-
+  deleteContacts(id: number) {
+    for (const contact of this.contacts) {
+      if (contact.id === id) {
+        this.contacts.splice(this.contacts.indexOf(contact), 1);
+      }
+    }
+  }
 }
