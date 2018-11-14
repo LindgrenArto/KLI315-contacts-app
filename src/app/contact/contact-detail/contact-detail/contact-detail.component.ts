@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Contact} from '../../contact';
+import {ContactService} from '../../services/contact.service';
+
+
 
 @Component({
   selector: 'app-contact-detail',
@@ -8,7 +12,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class ContactDetailComponent implements OnInit {
 
-  constructor(private router: Router, route: ActivatedRoute) { }
+  contact: Contact;
+
+  constructor(private router: Router, route: ActivatedRoute, private contactService: ContactService) {
+    this.contact = new Contact;
+  }
 
   ngOnInit() {
     this.router.navigate(['/contacts/new']);
@@ -16,7 +24,7 @@ export class ContactDetailComponent implements OnInit {
 
 
   onSave(): void {
-    console.log('saved');
+    this.contactService.addContact(this.contact);
     this.router.navigate(['/contacts']);
   }
 }

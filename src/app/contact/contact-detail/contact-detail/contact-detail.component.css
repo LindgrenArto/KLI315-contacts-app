@@ -1,0 +1,14 @@
+.al-detail-card {
+  width: 40%;
+  height: fit-content;
+  font-size: 20px;
+  left: 30%;
+  margin-top: 5%;
+  border-color: black;
+  border: 1px;
+}
+
+mat-form-field.mat-form-field {
+  font-size: 18px;
+  align-content: space-around;
+}
