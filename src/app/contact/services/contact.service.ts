@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Contact} from '../contact';
 import {last} from 'rxjs/operators';
+import {ContactLocalStorageService} from './contact-local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,11 @@ export class ContactService {
   contacts: Contact[];
   contact: Contact;
 
-  constructor() {
+  constructor(private localStorage: ContactLocalStorageService) {
+
+
     this.contacts = [];
-    this.contacts.push(new Contact(1, 'JK', 'Simmons', 'Lappeenranta', 'Pirkonlähteenkatu 2,', '+35840 551238', 'jk.simmons@email.com'));
+    this.contacts.push(new Contact(1, 'JK', 'Simmons', 'Lappeenranta', 'Pirkonlähteenkatu 2', '+35840 551238', 'jk.simmons@email.com'));
     this.contacts.push(new Contact(2, 'Second', 'Contact', 'Helsinki', 'Pihjalakatu 23', '045 32121213', 'sec.con@email.com'));
     this.contacts.push(new Contact(3, 'Third', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'third.contact@email.com'));
     this.contacts.push(new Contact(4, 'Fourth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'fourth.contact@email.com'));
@@ -23,20 +26,31 @@ export class ContactService {
     this.contacts.push(new Contact(9, 'Neignth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'neignth.contact@email.com'));
     this.contacts.push(new Contact(10, 'Tenth', 'Contact', 'Kouvola ', 'Kouvolankatu 1', '050 55151131', 'tenth.contact@email.com'));
     this.contacts.push(new Contact(11, 'Eleveth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'eleventh.contact@email.com'));
-    this.contacts.push(new Contact(12, 'Twelwth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'twelwth.contact@email.com'));
-    this.contacts.push(new Contact(13, 'Thirteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'thirteenth.contact@email.com'));
-    this.contacts.push(new Contact(14, 'Fourteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'fourteenth.contact@email.com'));
-    this.contacts.push(new Contact(15, 'Fifteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'fiftheenth.contact@email.com'));
-    this.contacts.push(new Contact(16, 'Sixteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'sixthteenth.contact@email.com'));
+    this.contacts.push(new Contact(12,
+      'Twelwth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'twelwth.contact@email.com'));
+    this.contacts.push(new Contact(13,
+      'Thirteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'thirteenth.contact@email.com'));
+    this.contacts.push(new Contact(14,
+      'Fourteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'fourteenth.contact@email.com'));
+    this.contacts.push(new Contact(15,
+      'Fifteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'fiftheenth.contact@email.com'));
+    this.contacts.push(new Contact(16,
+      'Sixteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'sixthteenth.contact@email.com'));
   }
 
   getContacts(): Contact[] {
     return this.contacts;
+    // return  this.localStorage.getContacts();
   }
 
   deleteContacts(contact: Contact) {
     console.log(contact.id);
     this.contacts.splice(this.contacts.indexOf(contact), 1);
+  }
+
+  getContactById(id: number) {
+    id = this.contact.id;
+    return id;
   }
 
   addContact(contact: Contact) {
@@ -45,4 +59,7 @@ export class ContactService {
     this.contacts.push(contact);
   }
 
+  editContact(contact: Contact) {
+   this.localStorage.et
+  }
 }

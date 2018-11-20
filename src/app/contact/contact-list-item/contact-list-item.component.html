@@ -1,4 +1,4 @@
-<mat-card class="al-card">
+<mat-card class="al-card mat-elevation-z16">
   <mat-card-title>
     <ngx-avatar name="{{contact.firstName}} {{contact.lastName}}"></ngx-avatar>
   </mat-card-title>
@@ -18,7 +18,7 @@
   </mat-card-content>
   <mat-card-actions align="end">
     <button mat-icon-button (click)="deleteContact(contact)"><mat-icon>delete</mat-icon> </button>
-    <button mat-icon-button><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button (click)="editContact()"><mat-icon>edit</mat-icon></button>
   </mat-card-actions>
 </mat-card>
 

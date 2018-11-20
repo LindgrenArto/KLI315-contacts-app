@@ -22,10 +22,13 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {RouterModule, Routes} from '@angular/router';
 import {ContactDetailComponent} from './contact/contact-detail/contact-detail/contact-detail.component';
 import {FormsModule} from '@angular/forms';
+import {ToolbarService} from './ui/toolbar/toolbar.service';
+import {ContactLocalStorageService} from './contact/services/contact-local-storage.service';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
   {path: 'contacts/new', component: ContactDetailComponent},
+  {path: 'contacts/edit/:id', component: ContactDetailComponent},
   {path: '', redirectTo: '/contacts', pathMatch: 'full'}
 ];
 
@@ -56,7 +59,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    ContactService
+    ContactService,
+    ToolbarService,
+    ContactLocalStorageService
   ],
   bootstrap: [AppComponent]
 })
