@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Contact} from '../contact';
 import {last} from 'rxjs/operators';
 import {ContactLocalStorageService} from './contact-local-storage.service';
+import {ContactHttpService} from './contact-http.service';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class ContactService {
   contacts: Contact[];
   contact: Contact;
 
-  constructor(private localStorage: ContactLocalStorageService) {
+  constructor(private localStorage: ContactLocalStorageService, private contactHttpService: ContactHttpService) {
 
 
     this.contacts = [];
@@ -38,28 +40,42 @@ export class ContactService {
       'Sixteenth', 'Contact', 'Kouvola', 'Kouvolankatu 1', '050 55151131', 'sixthteenth.contact@email.com'));
   }
 
+  /*
   getContacts(): Contact[] {
-    return this.contacts;
-    // return  this.localStorage.getContacts();
+    // return this.contacts;
+   return  this.localStorage.getContacts();
+  }
+getContactById(id: string): Contact {
+  return this.localStorage.getContactById(id);
+}
+    editContact(contact: Contact) {
+      this.localStorage.editContact(contact);
+    }
+
+    deleteContacts(contact: Contact) {
+      this.localStorage.deleteContact(contact);
+    }
+    addContact(contact: Contact) {
+    this.localStorage.addContact(contact);
+
+  }
+*/
+
+  getContacts(): Observable<Contact[]> {
+    return this.contactHttpService.get();
+  }
+  getContactById(id: string): Observable<Contact> {
+    return this.contactHttpService.getById(id);
+  }
+  addContact(contact: Contact): Observable<Contact> {
+    return this.contactHttpService.post(contact);
+  }
+  ediContact(contact: Contact): Observable<Contact> {
+    return this.contactHttpService.put(contact);
   }
 
-  deleteContacts(contact: Contact) {
-    console.log(contact.id);
-    this.contacts.splice(this.contacts.indexOf(contact), 1);
+  deleteContact(contact: Contact): Observable<any> {
+    return this.contactHttpService.delete(contact);
   }
 
-  getContactById(id: number) {
-    id = this.contact.id;
-    return id;
-  }
-
-  addContact(contact: Contact) {
-    const lastIndex = this.contacts[this.contacts.length - 1].id;
-    contact.id = lastIndex + 1;
-    this.contacts.push(contact);
-  }
-
-  editContact(contact: Contact) {
-   this.localStorage.et
-  }
 }

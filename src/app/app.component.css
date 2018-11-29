@@ -6,7 +6,7 @@
 }
 
 .al-sidenav {
-  width: 14%;
+  width: fit-content;
 }
 .al-sidenav-center {
   text-align: center;

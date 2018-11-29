@@ -13,7 +13,7 @@ import {
   MatDialogModule,
   MatDividerModule, MatFormFieldModule,
   MatIconModule, MatInputModule,
-  MatSidenavModule,
+  MatSidenavModule, MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 import {AvatarModule} from 'ngx-avatar';
@@ -24,6 +24,7 @@ import {ContactDetailComponent} from './contact/contact-detail/contact-detail/co
 import {FormsModule} from '@angular/forms';
 import {ToolbarService} from './ui/toolbar/toolbar.service';
 import {ContactLocalStorageService} from './contact/services/contact-local-storage.service';
+import {ConfirmDialogComponent} from './ui/confirm-dialog/confirm-dialog.component';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     ContactListComponent,
     ContactListItemComponent,
     ToolbarComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatDividerModule,
     MatCardModule,
+    MatSnackBarModule,
     AvatarModule,
     FlexLayoutModule,
     NgxPaginationModule,
@@ -62,6 +65,9 @@ const appRoutes: Routes = [
     ContactService,
     ToolbarService,
     ContactLocalStorageService
+  ],
+  entryComponents: [
+    ConfirmDialogComponent
   ],
   bootstrap: [AppComponent]
 })
