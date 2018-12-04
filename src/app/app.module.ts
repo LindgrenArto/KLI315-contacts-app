@@ -25,6 +25,9 @@ import {FormsModule} from '@angular/forms';
 import {ToolbarService} from './ui/toolbar/toolbar.service';
 import {ContactLocalStorageService} from './contact/services/contact-local-storage.service';
 import {ConfirmDialogComponent} from './ui/confirm-dialog/confirm-dialog.component';
+import {ContactProvider} from './contact/interfaces/contact-provider';
+import {ContactHttpService} from './contact/services/contact-http.service';
+import {environment} from '../environments/environment';
 
 const appRoutes: Routes = [
   {path: 'contacts', component: ContactListComponent},
@@ -64,7 +67,8 @@ const appRoutes: Routes = [
   providers: [
     ContactService,
     ToolbarService,
-    ContactLocalStorageService
+    ContactLocalStorageService,
+    {provide: ContactProvider, useClass: environment.apiEnabled ? ContactHttpService : ContactLocalStorageService}
   ],
   entryComponents: [
     ConfirmDialogComponent

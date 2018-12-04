@@ -5,6 +5,7 @@ import {ContactService} from '../../services/contact.service';
 import {ToolbarOptions} from '../../../ui/toolbar/toolbar-options';
 import {ToolbarService} from '../../../ui/toolbar/toolbar.service';
 import {MatSnackBar} from '@angular/material';
+import {consoleTestResultHandler} from 'tslint/lib/test';
 
 
 @Component({
@@ -47,15 +48,17 @@ export class ContactDetailComponent implements OnInit {
   onSave(): void {
     const contactId = this.route.snapshot.paramMap.get('id');
     if (contactId != null) {
-      this.contactService.ediContact(this.contact);
+      this.contactService.editContact(this.contact).subscribe(result => {
+        this.router.navigate(['/contacts']);
+        return this.contact = result;
+      });
       this.snackBar.open('Edited contact!', 'OK', {duration: 3000});
     } else {
       this.contactService.addContact(this.contact).subscribe(result => {
+        this.router.navigate(['/contacts']);
         return this.contact = result;
       });
       this.snackBar.open('Created contact!', 'OK', {duration: 3000});
     }
-    this.router.navigate(['/contacts']);
-    this.contactService.getContacts();
   }
 }
