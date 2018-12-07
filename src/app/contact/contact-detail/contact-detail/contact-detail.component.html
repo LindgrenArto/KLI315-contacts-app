@@ -39,6 +39,15 @@
                [(ngModel)]="contact.address" placeholder="Address">
       </mat-form-field>
       <mat-form-field appearance="fill">
+        <mat-icon matSuffix>location_on</mat-icon>
+        <mat-label>Postal Code</mat-label>
+        <input name="postalCode"
+               #adress="ngModel"
+               matInput
+               required
+               [(ngModel)]="contact.postalCode" placeholder="Postal code">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
         <mat-icon matSuffix>smartphone</mat-icon>
         <mat-label>Telephone</mat-label>
         <input name="telephone"

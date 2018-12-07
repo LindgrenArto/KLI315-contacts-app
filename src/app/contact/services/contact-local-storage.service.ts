@@ -24,6 +24,10 @@ export class ContactLocalStorageService implements ContactProvider {
     return of(this.contacts);
   }
 
+  getFiltered(search: string): Observable<Contact> {
+    return null;
+  }
+
   create(contact: Contact): Observable<Contact> {
     console.log(contact);
 

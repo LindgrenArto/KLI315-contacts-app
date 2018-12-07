@@ -13,14 +13,22 @@ import {ContactProvider} from '../interfaces/contact-provider';
 export class ContactHttpService  implements ContactProvider{
 
   url: string;
+  params: string;
 
   constructor(private httpClient: HttpClient) {
     this.url = environment.apiEndPointUrl + '/contacts';
+    this.params = '?q=';
   }
 
   get(): Observable<Contact[]> {
     return this.httpClient.get(this.url).pipe(map(response => {
       return response as Contact[];
+    }));
+  }
+
+  getFiltered(search: string): Observable<Contact> {
+    return this.httpClient.get(this.url + this.params + search).pipe(map(response => {
+      return response as Contact;
     }));
   }
 
@@ -45,5 +53,6 @@ export class ContactHttpService  implements ContactProvider{
   delete(contact: Contact): Observable<any> {
     return this.httpClient.delete(this.url + '/' + contact.id);
   }
+
 }
 

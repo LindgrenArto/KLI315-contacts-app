@@ -47,4 +47,8 @@ export class ContactListItemComponent implements OnInit {
   editContact() {
     this.router.navigate(['contacts/edit', this.contact.id]);
   }
+
+  navigateToMap() {
+    this.router.navigate(['contacts/map', {address: this.contact.address, city: this.contact.city}]);
+  }
 }

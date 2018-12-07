@@ -1,4 +1,10 @@
 <div>
+  <div class="al-search">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Search" oninput="filterContacts();">
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+  </div>
   <div fxLayout='row' fxLayoutAlign="space-around center" fxLayoutGap="5px" fxLayout.md="column"
        fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayout.xs="column" class="al-card-padding">
     <app-contact-list-item *ngFor="let contact of contacts | paginate: { itemsPerPage: 4, currentPage: p}"

@@ -66,6 +66,9 @@ getContactById(id: string): Contact {
   getContactById(id: string): Observable<Contact> {
     return this.contactProvider.getById(id);
   }
+  getFiltered(search: string): Observable<Contact> {
+    return this.contactProvider.getFiltered(search);
+  }
   addContact(contact: Contact): Observable<Contact> {
     return this.contactProvider.create(contact);
   }

@@ -13,6 +13,7 @@ import {ToolbarOptions} from '../../ui/toolbar/toolbar-options';
 export class ContactListComponent implements OnInit {
 
   contacts: Contact[];
+  p: any;
 
   constructor(private contactService: ContactService, private router: Router, private toolbar: ToolbarService) {
     this.contacts = [];
@@ -36,5 +37,9 @@ export class ContactListComponent implements OnInit {
     this.contactService.getContacts().subscribe(result => {
       this.contacts = result;
     });
+  }
+
+  filterContacts(search: string) {
+    this.contactService.getFiltered(search);
   }
 }

@@ -14,11 +14,12 @@
     {{contact.city}}
     <br>
     <mat-icon>location_on</mat-icon>
-    {{contact.address}}
+    {{contact.address}}, {{contact.postalCode}}
   </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-icon-button (click)="deleteContact(contact)"><mat-icon>delete</mat-icon> </button>
+  <mat-card-actions align="space-evenly">
+    <button mat-icon-button (click)="deleteContact()"><mat-icon>delete</mat-icon> </button>
     <button mat-icon-button (click)="editContact()"><mat-icon>edit</mat-icon></button>
+    <button mat-icon-button (click)="navigateToMap()"><mat-icon>place</mat-icon></button>
   </mat-card-actions>
 </mat-card>
 
