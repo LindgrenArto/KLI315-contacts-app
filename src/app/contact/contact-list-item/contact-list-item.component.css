@@ -1,6 +1,6 @@
 .al-card {
-  width: 290px;
-  height: 340px;
+  width: 450px;
+  height: 300px;
   font-size: 40px;
   owerflow: auto;
   margin: 2px;
@@ -12,5 +12,5 @@
   font-size: 20px;
 }
 .al-card-actions {
-  margin-top: 15%;
+  margin-top: 10%;
 }
