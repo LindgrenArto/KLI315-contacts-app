@@ -7,7 +7,7 @@
   </div>
   <div fxLayout='row' fxLayoutAlign="space-around center" fxLayoutGap="5px" fxLayout.md="column"
        fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayout.xs="column" class="al-card-padding">
-    <app-contact-list-item *ngFor="let contact of contacts | paginate: { itemsPerPage: 4, currentPage: p}"
+    <app-contact-list-item *ngFor="let contact of contacts | paginate: { itemsPerPage: 3, currentPage: p}"
                            [contact]="contact"
                            (contactDeleted)="onContactDeleted($event)"
                            fxFlexAlign="center center"></app-contact-list-item>
