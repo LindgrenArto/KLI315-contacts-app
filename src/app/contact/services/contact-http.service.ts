@@ -10,7 +10,7 @@ import {ContactProvider} from '../interfaces/contact-provider';
 @Injectable({
   providedIn: 'root'
 })
-export class ContactHttpService  implements ContactProvider{
+export class ContactHttpService implements ContactProvider {
 
   url: string;
   params: string;
@@ -26,10 +26,8 @@ export class ContactHttpService  implements ContactProvider{
     }));
   }
 
-  getFiltered(search: string): Observable<Contact> {
-    return this.httpClient.get(this.url + this.params + search).pipe(map(response => {
-      return response as Contact;
-    }));
+  getFiltered(value: string): Observable<Contact[]> {
+    return this.httpClient.get<Contact[]>(`${this.url}?q=${value}`);
   }
 
   getById(id: string): Observable<Contact> {

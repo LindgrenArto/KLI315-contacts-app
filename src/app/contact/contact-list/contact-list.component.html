@@ -1,7 +1,7 @@
 <div>
   <div class="al-search">
     <mat-form-field>
-      <input type="text" matInput placeholder="Search" oninput="filterContacts();">
+      <input type="text" #box matInput placeholder="Search" (keyup)="filterContacts(box.value);">
       <mat-icon matPrefix>search</mat-icon>
     </mat-form-field>
   </div>

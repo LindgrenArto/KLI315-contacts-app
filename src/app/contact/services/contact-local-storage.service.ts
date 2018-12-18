@@ -20,17 +20,22 @@ export class ContactLocalStorageService implements ContactProvider {
   }
 
   get(): Observable<Contact[]> {
-    console.log(this.contacts);
     return of(this.contacts);
   }
 
-  getFiltered(search: string): Observable<Contact> {
-    return null;
+  getFiltered(value: string): Observable<Contact[]> {
+    if (value) {
+      const filtered = this.contacts.filter(contact => contact.firstName.toLowerCase().includes(value)
+        || contact.lastName.toLowerCase().includes(value)
+       || contact.city.toLowerCase().includes(value) || contact.address.toLowerCase().includes(value));
+      return of(filtered);
+    }
+    if (!value) {
+      return this.get();
+    }
   }
 
   create(contact: Contact): Observable<Contact> {
-    console.log(contact);
-
     let lastIndex = 1;
     if (this.contacts.length > 0) {
       lastIndex = this.contacts[this.contacts.length - 1].id;

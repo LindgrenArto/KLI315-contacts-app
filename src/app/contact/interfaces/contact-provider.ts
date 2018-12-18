@@ -7,7 +7,7 @@ export abstract class ContactProvider implements IContactProvider {
 
   abstract getById(id: string): Observable<Contact>;
 
-  abstract getFiltered(search: string): Observable<Contact>;
+  abstract getFiltered(value: string): Observable<Contact[]>;
 
   abstract edit(contact: Contact): Observable<Contact>;
 
