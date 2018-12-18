@@ -1,76 +1,76 @@
 <mat-card class="al-detail-card mat-elevation-z16">
   <form (ngSubmit)="onSave()" #contactForm="ngForm">
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxLayout="column">
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>person</mat-icon>
-        <mat-label>First name</mat-label>
-        <input name="firstName"
-               #firstName="ngModel"
-               matInput
-               required
-               [(ngModel)]="contact.firstName" placeholder="First name">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>person</mat-icon>
-        <mat-label>Last name</mat-label>
-        <input name="lastName"
-               #lastName="ngModel"
-               matInput
-               required
-               [(ngModel)]="contact.lastName" placeholder="Last name">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>home</mat-icon>
-        <mat-label>City</mat-label>
-        <input name="city"
-               #city="ngModel"
-               matInput
-               required
-               [(ngModel)]="contact.city" placeholder="City">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>location_on</mat-icon>
-        <mat-label>Address</mat-label>
-        <input name="address"
-               #adress="ngModel"
-               matInput
-               required
-               [(ngModel)]="contact.address" placeholder="Address">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>location_on</mat-icon>
-        <mat-label>Postal Code</mat-label>
-        <input name="postalCode"
-               #adress="ngModel"
-               matInput
-               required
-               [(ngModel)]="contact.postalCode" placeholder="Postal code">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>smartphone</mat-icon>
-        <mat-label>Telephone</mat-label>
-        <input name="telephone"
-               #telephone="ngModel"
-               matInput
-               required maxlength="15"
-               [(ngModel)]="contact.telephone" placeholder="Telephone">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-icon matSuffix>email</mat-icon>
-        <mat-label>Email</mat-label>
-        <input name="email"
-               #email="ngModel"
-               matInput
-               required
-               pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
-               [(ngModel)]="contact.email"
-               placeholder="Email">
-        <mat-error *ngIf="email.invalid && email.errors.pattern"> Email must be a valid address</mat-error>
-        <mat-error *ngIf="email.invalid && email.required">Email is required</mat-error>
-      </mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+      <div fxLayout="column">
+        <mat-form-field appearance="fill">
+          <mat-label>First name</mat-label>
+          <input name="firstName"
+                 #firstName="ngModel"
+                 matInput
+                 required
+                 [(ngModel)]="contact.firstName" placeholder="First name">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Last name</mat-label>
+          <input name="lastName"
+                 #lastName="ngModel"
+                 matInput
+                 required
+                 [(ngModel)]="contact.lastName" placeholder="Last name">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          <input name="city"
+                 #city="ngModel"
+                 matInput
+                 required
+                 [(ngModel)]="contact.city" placeholder="City">
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input name="address"
+                 #adress="ngModel"
+                 matInput
+                 required
+                 [(ngModel)]="contact.address" placeholder="Address">
+          <mat-icon matSuffix>location_on</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Postal Code</mat-label>
+          <input name="postalCode"
+                 #adress="ngModel"
+                 matInput
+                 required
+                 [(ngModel)]="contact.postalCode" placeholder="Postal code">
+          <mat-icon matSuffix>location_on</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Telephone</mat-label>
+          <input name="telephone"
+                 #telephone="ngModel"
+                 matInput
+                 required maxlength="15"
+                 [(ngModel)]="contact.telephone" placeholder="Telephone">
+          <mat-icon matSuffix>smartphone</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-icon matSuffix>email</mat-icon>
+          <input name="email"
+                 #email="ngModel"
+                 matInput
+                 required
+                 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+                 [(ngModel)]="contact.email"
+                 placeholder="Email">
+          <mat-label>Email</mat-label>
+          <mat-error *ngIf="email.invalid && email.errors.pattern"> Email must be a valid address</mat-error>
+          <mat-error *ngIf="email.invalid && email.required">Email is required</mat-error>
+        </mat-form-field>
+      </div>
     </div>
-  </div>
   </form>
 </mat-card>
 

@@ -1,16 +1,155 @@
 .al-detail-card {
-  width: 480px;
-  height: fit-content;
-  font-size: 12px;
+  width: 800px;
+  height: 800px;
+  font-size: 20px;
   margin-top: 1%;
   border-color: black;
   border: 1px;
-  margin-left: 30%;
   position: absolute;
   overflow: hidden;
+  margin-left: 20%;
 }
 
 mat-form-field.mat-form-field {
-  font-size: 16px;
+  width: fit-content;
+  font-size: 20px;
   align-content: space-around;
+}
+
+@media only screen and (min-width: 300px) {
+  .al-detail-card {
+    width: 100px;
+    height: 900px;
+    font-size: 20px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 5px;
+    align-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 546px) {
+  .al-detail-card {
+    width: 150px;
+    height: 900px;
+    font-size: 10px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 3px;
+    align-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .al-detail-card {
+    width: 400px;
+    height: 900px;
+    font-size: 20px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 15%;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 25px;
+    align-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .al-detail-card {
+    width: 500px;
+    height: 900px;
+    font-size: 20px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 10%;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 25px;
+    align-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 786px) {
+  .al-detail-card {
+    width: 500px;
+    height: 900px;
+    font-size: 20px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 15%;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 25px;
+    align-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .al-detail-card {
+    width: 700px;
+    height: 800px;
+    font-size: 20px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 15%;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 20px;
+    align-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .al-detail-card {
+    width: 800px;
+    height: 800px;
+    font-size: 20px;
+    margin-top: 1%;
+    border-color: black;
+    border: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin-left: 20%;
+  }
+
+  mat-form-field.mat-form-field {
+    width: fit-content;
+    font-size: 23px;
+    align-content: space-around;
+  }
 }

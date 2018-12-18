@@ -8,7 +8,7 @@ import {Observable, of} from 'rxjs';
 })
 export class ContactLocalStorageService implements ContactProvider {
 
-  localStorage: 'contacts-app';
+  localStorage = 'contacts-app';
   contacts: Contact[];
 
   constructor() {
