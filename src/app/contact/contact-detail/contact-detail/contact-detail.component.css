@@ -1,6 +1,6 @@
 .al-detail-card {
   width: 800px;
-  height: 800px;
+  height: 900px;
   font-size: 20px;
   margin-top: 1%;
   border-color: black;
@@ -137,7 +137,7 @@ mat-form-field.mat-form-field {
 @media only screen and (min-width: 1200px) {
   .al-detail-card {
     width: 800px;
-    height: 800px;
+    height: 820px;
     font-size: 20px;
     margin-top: 1%;
     border-color: black;
