@@ -1,10 +1,4 @@
-.al-card {
-  width: 450px;
-  height: 330px;
-  font-size: 40px;
-  owerflow: auto;
-  margin: 2px;
-}
+
 .al-card-content {
   font-size: 25px;
 }
@@ -16,8 +10,30 @@
   position: relative;
 }
 
-@media only screen and (max-width: 546px) {
+@media only screen and (min-width: 200px) {
   .al-card {
-    width: 300px;
+    width: 330px;
+    height: 330px;
+    font-size: 40px;
+    owerflow: auto;
+    margin: 2px;
+  }
+}
+@media only screen and (min-width: 350px) {
+  .al-card {
+    width: 320px;
+    height: 330px;
+    font-size: 40px;
+    owerflow: auto;
+    margin: 2px;
+  }
+}
+@media only screen and (min-width: 460px) {
+  .al-card {
+    width: 450px;
+    height: 330px;
+    font-size: 40px;
+    owerflow: auto;
+    margin: 2px;
   }
 }
