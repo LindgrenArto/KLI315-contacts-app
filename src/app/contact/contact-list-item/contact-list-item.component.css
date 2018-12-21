@@ -15,3 +15,9 @@
   margin-top: 7%;
   position: relative;
 }
+
+@media only screen and (max-width: 546px) {
+  .al-card {
+    width: 300px;
+  }
+}

@@ -1,80 +1,26 @@
-.al-detail-card {
-  width: 800px;
-  height: 900px;
-  font-size: 20px;
-  margin-top: 1%;
-  border-color: black;
-  border: 1px;
-  position: absolute;
-  overflow: hidden;
-  margin-left: 20%;
-}
 
-mat-form-field.mat-form-field {
-  width: fit-content;
-  font-size: 20px;
-  align-content: space-around;
-}
-
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 546px) {
   .al-detail-card {
-    width: 100px;
+    width: 250px;
     height: 900px;
-    font-size: 20px;
     margin-top: 1%;
     border-color: black;
     border: 1px;
     position: absolute;
+    margin-left: 30px;
     overflow: hidden;
   }
 
   mat-form-field.mat-form-field {
-    width: fit-content;
-    font-size: 5px;
+    width: 200px;
+    font-size: 15px;
     align-content: space-around;
   }
 }
 
-@media only screen and (min-width: 546px) {
-  .al-detail-card {
-    width: 150px;
-    height: 900px;
-    font-size: 10px;
-    margin-top: 1%;
-    border-color: black;
-    border: 1px;
-    position: absolute;
-    overflow: hidden;
-  }
 
-  mat-form-field.mat-form-field {
-    width: fit-content;
-    font-size: 3px;
-    align-content: space-around;
-  }
-}
 
-@media only screen and (max-width: 600px) {
-  .al-detail-card {
-    width: 400px;
-    height: 900px;
-    font-size: 20px;
-    margin-top: 1%;
-    border-color: black;
-    border: 1px;
-    position: absolute;
-    overflow: hidden;
-    margin-left: 15%;
-  }
-
-  mat-form-field.mat-form-field {
-    width: fit-content;
-    font-size: 25px;
-    align-content: space-around;
-  }
-}
-
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 547px) {
   .al-detail-card {
     width: 500px;
     height: 900px;
